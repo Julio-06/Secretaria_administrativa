@@ -1,21 +1,13 @@
 <?php
-$conn = new mysqli("mysql", "root", "juliotupapiriko06", "Secretaria_administrativa");
-// Verifica conexión
-if ($conn->connect_error) {
-	die("La conexión falló: " . $conn->connect_error);
-}else echo "Conexión exitosa";
+/*Por medio de este archivo se accede a la aplicación*/
+require_once("Db/db.php"); //Se incluye el archivo que contiene la conexión a la BD
 
-$sql = "SELECT titulo_obtenido, iddiplomados FROM diplomados_docentes";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-	// Datos de salida de cada registro
-	while($row = $result->fetch_assoc()) {
-		echo $row['titulo_obtenido']."<br>";
-		echo $row['iddiplomados']."<br>";
-	}
-} else {
-	echo "Ningún resultado para la tabla usuarios";
+if (isset($_GET['controller']) && isset($_GET['action'])) { // Si hay un controlador y acción (método) definido...
+    $controller = $_GET['controller'];
+    $action = $_GET['action'];
+} else { //Si no se ha definido un controlador y acción (caso cuando se accede la primera vez en la sesión)
+    $controller = 'Home';
+    $action = 'index';
 }
-$conn->close();
+require_once('Views/Layouts/layout.php'); //Se incluye lo que hay en la vista layout.php
 ?>
