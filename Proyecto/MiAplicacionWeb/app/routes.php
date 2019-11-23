@@ -2,6 +2,7 @@
 
 
 $controllers = array(
+    'Login' => ['validar','recuperar','inicio','salir'],
     'Home' => ['index'],
     'Docente' => ['index', 'add', 'save'],
     'Administrativo' => ['index']
@@ -33,6 +34,8 @@ function call($controller, $action)
         case 'Administrativo':
             $controller = new AdministrativoController();
             break;
+	    case 'Login':
+	    $controller = new LoginController();
         default:
             # código...
             break;

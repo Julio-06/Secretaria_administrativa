@@ -1,0 +1,22 @@
+img{
+    
+    width: 100%;
+}
+body{
+    background:url("http://www.utp.ac.pa/sites/default/files/img_0524.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.color{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color:rgb(255, 255, 255,0.6); 
+    z-index: -1;
+}
+.sombra{
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(105, 105, 105, 0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(105, 105, 105, 0.75);
+box-shadow: 10px 10px 5px 0px rgba(105, 105, 105, 0.75);
+}
