@@ -1,13 +1,31 @@
 <?php
-/*Por medio de este archivo se accede a la aplicación*/
-require_once("Db/db.php");
-if (isset($_GET['controller']) && isset($_GET['action'])) { // Si hay un controlador y acción (método) definido...
-    $controller = $_GET['controller'];
-    $action = $_GET['action'];
-} else { //Si no se ha definido un controlador y acción (caso cuando se accede la primera vez en la sesión)
-    $controller = 'Login';
-    $action = 'inicio';
-}
-require_once('routes.php'); 
+include_once 'includes/session.php';
+include_once 'Controllers/UsuarioController.php';
 
+$userSession = new UserSession();
+$user = new UsuarioSession();
+
+if(isset($_SESSION['user'])){
+    $user->ingresar($userSession->getusuario);
+    include_once 'Views/Layouts/layout.php';
+}
+elseif (isset($_POST['email']) && isset($_POST['pass'])) {
+    $userForm = $_POST['email'];
+    $passForm = $_POST['pass'];
+
+    if($user-> validar($userForm,$passForm)){
+        $userSession->usuario($userForm);
+        $user->ingresar($userForm);
+        include_once 'Views/Layouts/layout.php';
+    }
+    else{
+        $errorLogin = "Nombre de usuario y/o contraseña es incorrecto";
+        include_once 'Views/Login/login.php';
+    }
+}
+else {
+    
+    include_once 'Views/Login/login.php';
+}
 ?>
+

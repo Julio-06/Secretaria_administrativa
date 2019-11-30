@@ -1,7 +1,3 @@
-<?php
-	session_start();
-
-?>
 
 <div class='container'>
 
@@ -12,7 +8,7 @@
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="?controller=Home&action=index">Secretaría Administrativa</a>
     <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-            <a class="nav-link" href="?controller=Login&action=salir">Salir</a>
+            <a class="nav-link" href="Views/Login/salir.php">Salir</a>
         </li>
     </ul>
 </nav>

@@ -1,11 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bootstrap/css/login.css">
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../bootstrap/css/login.css">
     <title>Document</title>
 </head>
 <body>
@@ -17,7 +18,13 @@
             </div>
 
             <div class="col-sm-4  bg-success text-white pt-5 rounded-right border border-left-0 border-gray ">
-                <form action="?controller=Login&action=validar" method="POST">
+                <form action="" method="POST">
+                <?php
+                if(isset($errorLogin)){
+                    echo $errorLogin;
+
+                }
+                ?>
                     <h2>Inicio de sesión</h2>
                     <div class="form-group">
                         <label for="email">Correo:</label>
@@ -32,7 +39,7 @@
                         <input class="form-check-input" type="checkbox"> Recordar usuario
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <button type="submit" class="btn btn-primary" name="Iniciar" value="Login">Enviar</button>
                 </form>
                
          </div>

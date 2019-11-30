@@ -1,4 +1,5 @@
 <?php
+require_once("../../Db/db.php");
 class LoginModel{
     private $db;
     private $login;
