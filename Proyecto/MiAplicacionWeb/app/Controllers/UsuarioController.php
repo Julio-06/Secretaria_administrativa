@@ -13,10 +13,13 @@ class UsuarioSession
         $rob=new Usuario();
         $iniciar=$rob->validar($user,$contra);
         if(sizeof($iniciar)>0){
-            return true;
+            foreach ($iniciar as $idrol) {
+                $id_rol = $idrol["id_rol"];
+            }
+            return $id_rol;
             
         }else{
-            return false;
+            return 0;
         }
     }
     function ingresar($user){
@@ -24,11 +27,21 @@ class UsuarioSession
         $iniciar=$rob->usuario($user);
 
     }
-    function salir(){
-      
-      require_once('Views/Login/salir.php');
-      
+    function usuario(){
+        $model=new Usuario();
+        $usuario=$model->getUsuario();
+        if($usuario!=NULL){
+            return $usuario;
+        }
     }
+    function rol(){
+        $model=new Usuario();
+        $rol=$model->getRol();
+        
+
+        return $rol;
+    }
+    
 
 }
 ?>

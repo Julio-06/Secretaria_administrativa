@@ -1,4 +1,5 @@
 <?php
+
 if (isset($_GET['controller']) && isset($_GET['action'])) { // Si hay un controlador y acción (método) definido...
     $controller = $_GET['controller'];
     $action = $_GET['action'];
@@ -7,6 +8,15 @@ if (isset($_GET['controller']) && isset($_GET['action'])) { // Si hay un control
     $action = 'index';
 }
 
+if(!isset($_SESSION['rol'])){
+	header('location: Views/Login/login.php');
+
+}
+else {
+	if($_SESSION['rol'] != 1 ){
+		header('location: Views/Login/login.php');
+	}
+}
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +40,7 @@ if (isset($_GET['controller']) && isset($_GET['action'])) { // Si hay un control
 		
         </div>
 	</div>
+	
 
 </body>
 

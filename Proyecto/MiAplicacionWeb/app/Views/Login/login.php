@@ -21,7 +21,9 @@
                 <form action="" method="POST">
                 <?php
                 if(isset($errorLogin)){
-                    echo $errorLogin;
+                    
+                    
+                    echo "<h4>".$errorLogin."</h4>";
 
                 }
                 ?>
