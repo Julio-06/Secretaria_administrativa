@@ -3,7 +3,7 @@
 
 $controllers = array(
     'Home' => ['index'],
-    'Docente' => ['index', 'add', 'save'],
+    'Docente' => ['index', 'add', 'save', 'update'],
     'Administrativo' => ['index']
 );
 

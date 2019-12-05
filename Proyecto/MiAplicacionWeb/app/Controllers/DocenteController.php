@@ -19,17 +19,63 @@ class DocenteController
 	}
 
 	function add(){
-		require_once('Views/Docente/add.php');
-	}
-
-	function save(){
 		$docente = new DocenteModel();
+		require_once('Views/Docente/add.php');	
 
 	}
+	function save(){
+		$datos = array($_POST['segundo_nombre'], $_POST['primer_nombre']);
+		$Docente = new DocenteModel();
+		$Docent = $Docente->registrar($datos);
+		if ($Docent == 0){
+			echo $Docent;
+		}
+		else{
+			echo $Docent;
+		}
+		
+	}
+ 	function register(){
+		require_once('Views/Docente/register.php');
+	}
 
-	/* function error(){
+	function update(){
+		echo 'esta haciendo update';
+	}
+
+	}
+	/*if (isset($_POST['action'])) {
+		$DocenteController = new DocenteController();
+		//se añade el archivo usuario.php
+		require_once('../Models/Docente.php');
+		
+		//se añade el archivo para la conexion
+		require_once('Db/db.php');
+ 
+		//if ($_POST['action']=='register') {
+			$Docente= new Docente(null,$_POST['primer_nombre'],$_POST['segundo_nombre'],$_POST['primer_apellido'],$_POST['segundo_apellido'],null,null,null,$_POST['cedula'],null,null,null,null,null,null,null,null);
+			$DocenteController->save($Docente);}
+		}
+		if (isset($_GET['action'])) {
+			if ($_GET['action']!='register'&$_GET['action']!='index') {
+				require_once('Db/db.php');
+				$DocenteController=new DocenteController();
+				//para eliminar
+				if ($_GET['action']=='delete') {		
+					$DocenteController->delete($_GET['id']);
+				}elseif ($_GET['action']=='update') {//mostrar la vista update con los datos del registro actualizar
+					require_once('../Models/usuario.php');				
+					$usuario=Usuario::getById($_GET['id']);		
+					//var_dump($usuario);
+					//$usuarioController->update();
+					require_once('../Views/Usuario/update.php');
+				}	
+			}	
+		}
+		
+	 function error(){
 		require_once('Views/Docente/error.php');
 	} */
 
-}
+
 ?>

@@ -6,7 +6,7 @@
                 <div class="form-group row">
                     <label for="primer_nombre" class="col-md-4 col-form-label">Primer nombre:</label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" id="primer_nombre" placeholder="Primer nombre del docente">
+                        <input type="text" class="form-control" id="primer_nombre" name="primer_nombre" placeholder="Primer nombre del docente">
                     </div>
                 </div>
             </div>
@@ -14,7 +14,7 @@
                 <div class="form-group row">
                     <label for="segundo_nombre" class="col-md-4 col-form-label">Segundo nombre:</label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" id="segundo_nombre" placeholder="Segundo nombre del docente">
+                        <input type="text" class="form-control" id="segundo_nombre"  name="segundo_nombre" placeholder="Segundo nombre del docente">
                     </div>
                 </div>
             </div>
@@ -24,15 +24,15 @@
                 <div class="form-group row">
                     <label for="primer_apellido" class="col-md-4 col-form-label">Primer apellido:</label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" id="primer_apellido" placeholder="Primer apellido del docente">
+                        <input type="text" class="form-control" id="primer_apellido"  name="primer_apellido" placeholder="Primer apellido del docente">
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group row">
-                    <label for="segundo_apellido" class="col-md-4 col-form-label">Segundo apellido:</label>
+                    <label for="segundo_apellido" class="col-md-4 col-form-label" >Segundo apellido:</label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" id="segundo_apellido" placeholder="Segundo apellido del docente">
+                        <input type="text" class="form-control" id="segundo_apellido"  name="segundo_apellido" placeholder="Segundo apellido del docente">
                     </div>
                 </div>
             </div>
@@ -42,11 +42,11 @@
                 <div class="form-group row">
                     <label for="cedula" class="col-md-4 col-form-label">Cédula:</label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" id="cedula" placeholder="Cédula del docente">
+                        <input type="text" class="form-control" id="cedula"  name="cedula" placeholder="Cédula del docente">
                     </div>
                 </div>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-success">Guardar</button>
     </form>
 </main>

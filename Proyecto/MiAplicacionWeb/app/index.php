@@ -8,6 +8,7 @@ if (isset($_GET['controller']) && isset($_GET['action'])) { // Si hay un control
 } else { //Si no se ha definido un controlador y acción (caso cuando se accede la primera vez en la sesión)
     $controller = 'Home';
     $action = 'index';
+    
 }
 require_once('Views/Layouts/layout.php'); //Se incluye lo que hay en la vista layout.php
 ?>
