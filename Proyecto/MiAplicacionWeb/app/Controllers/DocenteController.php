@@ -24,14 +24,15 @@ class DocenteController
 
 	}
 	function save(){
-		$datos = array($_POST['segundo_nombre'], $_POST['primer_nombre']);
+		$datos = array($_POST['primer_nombre'], $_POST['segundo_nombre'], $_POST['primer_apellido'], $_POST['segundo_apellido'], $_POST['cedula'], $_POST['fecha_de_nacimiento'] , $_POST['genero'], $_POST['sangre'], $_POST['peso'], $_POST['estatura'], $_POST['estado_salud'], $_POST['estado_civil']);
+		/*print_r($datos);*/
 		$Docente = new DocenteModel();
 		$Docent = $Docente->registrar($datos);
 		if ($Docent == 0){
-			echo $Docent;
+			require_once('Views/Docente/registrado.php');
 		}
 		else{
-			echo $Docent;
+			require_once('Views/Docente/existente.php');;
 		}
 		
 	}

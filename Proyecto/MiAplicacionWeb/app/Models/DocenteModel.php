@@ -17,16 +17,19 @@ class DocenteModel{
         return $this->Docentes;
     }
     public function registrar($datos){
-        $prueba = $datos[1];
-        $consul = $this->db->query("SELECT nombre FROM prueba where nombre='$prueba'->fetch()");
+        $prueba = $datos[4];
+        /*print_r($prueba);*/
+        $consul = $this->db->query("SELECT COUNT(*) FROM docentes where cedula='$prueba'");
+        print_r($consul);
+        print_r($consul->num_rows);
+        die();
         
-        if ($consul == 0){
-            $this->db->query("INSERT INTO prueba VALUES('$datos[0]','$datos[1]');");
-            return($mandato); 
+        if ($consul->num_rows == 0){
+            $this->db->query("INSERT INTO docentes(primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, fecha_de_nacimiento, cedula, genero, sangre, peso, estatura, estado_salud, estado_civil) VALUES('$datos[0]','$datos[1]','$datos[2]','$datos[3]','$datos[5]','$datos[4]','$datos[6]','$datos[7]','$datos[8]','$datos[9]','$datos[10]','$datos[11]');");
+            return($consul); 
         }
         else{
-            
-            return ($mandato);
+            return ($consul);
         }
     }
     /*Arreglar esto
