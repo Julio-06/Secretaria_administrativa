@@ -17,6 +17,7 @@ else {
 		header('location: Views/Login/login.php');
 	}
 }
+
 ?>
 
 <!DOCTYPE html>

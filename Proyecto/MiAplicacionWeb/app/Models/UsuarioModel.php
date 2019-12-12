@@ -3,8 +3,7 @@ include 'Db/db.php';
 
 class Usuario{
     private $db;
-    private $usuario;
-    private $rol;
+    private $usuario;  
     private $usuariorg;
     
 
@@ -14,7 +13,7 @@ class Usuario{
         
     }
     public function validar($usuario,$pass){
-        $consulta = $this->db->query("select id_rol,usuario from usuarios where usuario= '$usuario' and contrasena = '$pass' ");
+        $consulta = $this->db->query("select  idusuarios,id_rol,usuario from usuarios where usuario= '$usuario' and contrasena = '$pass' ");
         while ($row = $consulta->fetch_assoc()){
             $this->usuariorg[]=$row;
             
@@ -26,10 +25,11 @@ class Usuario{
     }
 
     public function usuario($usuario){
-        $consulta = $this->db->query("select usuario,id_rol from usuarios where usuario= '$usuario'");
+        $consulta = $this->db->query("select idusuarios,usuario,id_rol from usuarios where usuario= '$usuario'");
         foreach ($consulta as $usuariobd) {
            $this->usuario = $usuariobd['usuario'];
-           $this->rol = $usuariobd['id_rol'];
+          
+           
            
         }
         
@@ -40,6 +40,7 @@ class Usuario{
     public function getRol(){
         return $this->usuariorg;
     }
+    
 
 
 }
