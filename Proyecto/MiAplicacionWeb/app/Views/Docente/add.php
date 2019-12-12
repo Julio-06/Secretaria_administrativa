@@ -1,6 +1,33 @@
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-    <h2 class="mt-2">Registro de nuevo docente</h2>
-    <form action="?controller=Docente&&action=save" method="POST">
+    <h2 class="mt-2">Registro de nuevo usuario</h2>
+    <select name="controller" id="sel">
+        <option value="?controller=Docente&&action=save">Docente</option>
+        <option value="?controller=Administrativo&&action=save">Administrativo</option>
+    </select>
+        <script>
+            document.getElementById('sel').onchange = function() {
+            var val = this.value;
+            if (val == "Docente"){
+                    document.getElementById('eleccion').action = val;
+                   
+	            };
+            else if (val == "Administrativo"){
+                document.getElementById('eleccion').action = val;
+
+            };
+            /*function cambio (val){
+	            if (val == "Docente"){
+                    document.getElementbyId("eleccion").action = "?controller=Docente&&action=save";
+                   
+	            }
+                else if (val == "Administrativo"){
+                    document.getElementbyId("eleccion").action = "?controller=Administrativo&&action=save";
+
+	            }*/
+            };
+        </script>
+    
+    <form id="eleccion" action="/" method="POST">
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group row">
@@ -62,8 +89,8 @@
                     <div class="col-md-2">
                         <select  class="mdb-select md-forl" id="genero"  name="genero" placeholder="genero"required>
                         <option value="" disabled selected>Seleccione el genero</option>
-                        <option value="Masculino">Masculino</option>
-                        <option value="Femenino">Femenino</option>
+                        <option value="m">Masculino</option>
+                        <option value="f">Femenino</option>
                         </select>
                     </div>
                 </div>
