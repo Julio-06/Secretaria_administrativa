@@ -27,10 +27,7 @@ class Usuario{
     public function usuario($usuario){
         $consulta = $this->db->query("select idusuarios,usuario,id_rol from usuarios where usuario= '$usuario'");
         foreach ($consulta as $usuariobd) {
-           $this->usuario = $usuariobd['usuario'];
-          
-           
-           
+           $this->usuario = $usuariobd['usuario'];        
         }
         
     }
