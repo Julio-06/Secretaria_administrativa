@@ -7,20 +7,43 @@ $user = new UsuarioSession();
 
 if(isset($_SESSION['user'])){
     $user->ingresar($userSession->getusuario);
-    include_once 'Views/Layouts/layout.php';
+    switch ($_SESSION['rol']) {
+        case '1':
+            include_once 'Views/Layouts/layout.php';
+            break;
+
+        case '2':
+            include_once 'Views/Layouts/layout_administrativo.php';
+            break;
+
+        case '3':
+            include_once 'Views/Layouts/layout_docentes.php';
+            break;
+        
+        default:
+            # code...
+            break;
+    }
+    
 }
 elseif (isset($_POST['email']) && isset($_POST['pass'])) {
     $userForm = $_POST['email'];
     $passForm = $_POST['pass'];
+
+    $valor=array();
     $valor=$user->validar($userForm,$passForm);
-
-    if($valor>0){
+    
+    
+    if($valor[1]>0){
         
-        $userSession->usuario($userForm);
-        $user->ingresar($userForm);
-        $userSession->rol($valor);
+        $userSession->usuario($valor[2]);
+        $userSession->rol($valor[1]);
+        $userSession->id($valor[0]);
 
-            switch ($valor) {
+        $user->ingresar($userForm);
+       
+
+            switch ($valor[1]) {
                 case 1:
                     include_once 'Views/Layouts/layout.php';
                     break;

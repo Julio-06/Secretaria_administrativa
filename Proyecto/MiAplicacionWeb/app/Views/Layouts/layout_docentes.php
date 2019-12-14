@@ -32,14 +32,14 @@ else {
 </head>
 
 <body>
-	<header>
+	<div class="row">
+		<div class="col-sm-12">
 		<?php require_once('menu.php'); ?>
-	</header>
-	<div class="container-fluid">
-        <div class="row">
-		<?php require_once("routes.php");    ?>
-		
-        </div>
+		</div>
+		<div class="col-sm-2 bg-dark">
+		<?php require_once('menu2_docentes.php'); ?>
+		</div>
+		<?php require_once('routes.php'); ?>
 	</div>
 
 

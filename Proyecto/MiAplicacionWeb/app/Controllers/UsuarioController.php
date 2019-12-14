@@ -11,16 +11,19 @@ class UsuarioSession
         $user = $usu;
         $contra = $pass;
         $rob=new Usuario();
+        
         $iniciar=$rob->validar($user,$contra);
         if(sizeof($iniciar)>0){
-            foreach ($iniciar as $idrol) {
-                $id_rol = $idrol["id_rol"];
+            foreach ($iniciar as $dato) {
+                $datos =array($dato["idusuarios"],$dato["id_rol"],$dato["usuario"]); 
+                
             }
-            return $id_rol;
+            return $datos;
             
         }else{
             return 0;
         }
+        
     }
     function ingresar($user){
         $rob=new Usuario();
