@@ -47,11 +47,21 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-      </tr>
+    <?php
+        foreach ($datos as $dato) { ?>
+          <tr>
+              <td><?php echo $dato["genero"]?></td>
+              <td><?php echo $dato["sangre"]?></td>
+              <td><?php echo $dato["peso"]?></td>
+              <td><?php echo $dato["estatura"]?></td>
+              <td><?php echo $dato["estado_salud"]?></td>
+              <td><?php echo $dato["estado_civil"]?></td>
+              <td><?php echo $dato["correo_personal1"]?></td>
+              <td><?php echo $dato["correo_personal2"]?></td>
+              <td><?php echo $dato["usuario_id"]?></td>
+          </tr>
+        <?php }
+        ?>
     </tbody>
   </table>
 </div>
