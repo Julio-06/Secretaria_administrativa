@@ -4,6 +4,8 @@
 */
 require_once('Models/DocenteModel.php');
 
+
+
 class DocenteController
 {
 	
@@ -16,6 +18,74 @@ class DocenteController
 		$docente = new DocenteModel();
 		$datos = $docente->listar();
 		require_once('Views/Docente/index.php');
+	}
+	function buscar(){
+		$docente = new DocenteModel();
+		$id=$_SESSION['id'];
+		
+		$tabla=$_GET['table'];
+
+		$tablas=array("docentes",
+					  "residencia_docentes",
+					  "informacion_institucional_docentes",
+					  "familiares_emergencia_docentes",
+					  "laboral_docentes",
+					  "capacitaciones_docentes",
+					  "diplomados_docentes",
+					  "registros_academicos_docentes",
+					);
+
+		if ($tabla==0) {
+			$datos = $docente->consultar($id,$tablas[$tabla]);
+		}
+		else {
+			$idusuario = $docente->consultar($id,$tablas[0]);
+
+			foreach ($idusuario as $dato) {
+				$iddoc=$dato["iddocentes"];
+			}
+			$datos = $docente->consultar($iddoc,$tablas[$tabla]);
+		}
+		
+		
+		
+		switch ($tabla) {
+			case 0:
+				require_once('Views/Docente/Informacion/docentes.php');
+				break;
+			case 1:
+				require_once('Views/Docente/Informacion/residencia.php');
+				break;
+
+			case 2:
+				require_once('Views/Docente/Informacion/informacion_institucional.php');
+				break;
+
+			case 3:
+				require_once('Views/Docente/Informacion/familiares.php');
+				break;
+
+			case 4:
+				require_once('Views/Docente/Informacion/laboral.php');
+				break;
+
+			case 5:
+				require_once('Views/Docente/Informacion/capacitaciones.php');
+				break;
+
+			case 6:
+				require_once('Views/Docente/Informacion/diplomados.php');
+				break;
+
+			case 7:
+				require_once('Views/Docente/Informacion/registros_academicos.php');
+				break;
+			default:
+				# code...
+				break;
+		}
+	
+		
 	}
 
 	function add(){

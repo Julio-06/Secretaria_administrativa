@@ -1,10 +1,11 @@
 <?php
 
 
+
 $controllers = array(
     'Login' => ['validar','recuperar','inicio','salir'],
     'Home' => ['index'],
-    'Docente' => ['index', 'add', 'save'],
+    'Docente' => ['index', 'add', 'save','buscar'],
     'Administrativo' => ['index'],
     'Usuario' => ['add','save']
 );
@@ -46,8 +47,11 @@ function call($controller, $action)
             # código...
             break;
     }
+   
+        $controller->{$action}();
+    
 
-    $controller->{$action}();
+    
 }
 
 ?>

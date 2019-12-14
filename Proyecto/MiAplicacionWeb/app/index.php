@@ -7,6 +7,7 @@ $user = new UsuarioSession();
 
 if(isset($_SESSION['user'])){
     $user->ingresar($userSession->getusuario);
+    
     switch ($_SESSION['rol']) {
         case '1':
             include_once 'Views/Layouts/layout.php';

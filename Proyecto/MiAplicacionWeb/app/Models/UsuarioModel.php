@@ -14,7 +14,7 @@ class Usuario{
         
     }
     public function validar($usuario,$pass){
-        $consulta = $this->db->query("select id_rol,usuario from usuarios where usuario= '$usuario' and contrasena = '$pass' ");
+        $consulta = $this->db->query("select * from usuarios where usuario= '$usuario' and contrasena = '$pass' ");
         while ($row = $consulta->fetch_assoc()){
             $this->usuariorg[]=$row;
             
