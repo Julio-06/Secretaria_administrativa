@@ -10,12 +10,6 @@ class  Session{
     public function rol($rol){
         $_SESSION['rol']=$rol;
     }
-    public function id($id){
-        $_SESSION['id']=$id;
-    }
-    public function getid(){
-        return $_SESSION['id'];
-    }
     public function getrol(){
         return $_SESSION['rol'];
     }

@@ -36,8 +36,12 @@
                         <label for="pwd">Contraseña:</label>
                         <input name="pass" type="password" class="form-control" id="pwd">
                     </div>
-                    
-                    <button type="submit" class="btn btn-primary" name="Iniciar" value="Login">Enviar</button>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox"> Recordar usuario
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-dark" name="Iniciar" value="Login">Enviar</button>
                 </form>
                
          </div>

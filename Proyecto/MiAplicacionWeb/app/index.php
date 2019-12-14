@@ -12,21 +12,15 @@ if(isset($_SESSION['user'])){
 elseif (isset($_POST['email']) && isset($_POST['pass'])) {
     $userForm = $_POST['email'];
     $passForm = $_POST['pass'];
-
-    $valor=array();
     $valor=$user->validar($userForm,$passForm);
-    
-    
-    if($valor[1]>0){
+
+    if($valor>0){
         
-        $userSession->usuario($valor[2]);
-        $userSession->rol($valor[1]);
-        $userSession->id($valor[0]);
-
+        $userSession->usuario($userForm);
         $user->ingresar($userForm);
-       
+        $userSession->rol($valor);
 
-            switch ($valor[1]) {
+            switch ($valor) {
                 case 1:
                     include_once 'Views/Layouts/layout.php';
                     break;
