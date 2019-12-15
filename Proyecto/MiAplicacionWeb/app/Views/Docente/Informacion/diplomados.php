@@ -33,10 +33,12 @@
                         
                         <input name="institucion" type="text" class="form-control" placeholder="Institución" >
                     </div>
+
+                    <!-- Modal 
                     <div class="form-group">
                         <label for="exampleFormControlFile1">Título adjuto</label>
                         <input name="tituload" type="file" class="form-control-file" id="exampleFormControlFile1">
-                    </div>
+                    </div>-->
                     
                         
                     <button type="submit" class="btn btn-dark">Enviar</button>
@@ -90,10 +92,10 @@
         <th>Título</th>
         <th>Año</th>
         <th>Institución</th>
-        <th>Título_adjunto</th>
-        <th>Docente_Id</th>
         
         <th>Docente_Id</th>
+        
+        
         </tr>
     </thead>
     <tbody>

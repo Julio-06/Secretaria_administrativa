@@ -25,7 +25,7 @@ class DocenteController
 		$titulo = $_POST['titulo'];
 		$año=$_POST['año'];
 		$instituto=$_POST['institucion'];
-		$archivo=$_POST['tituload'];
+		//$archivo=$_POST['tituload'];
 
 		$usuario=$_SESSION['idU'];
 
@@ -39,14 +39,10 @@ class DocenteController
 					  "registros_academicos_docentes",
 					);
 
-		$docente->insert($titulo,$año,$instituto,$archivo,$tablas[$tabla],$usuario);
-		if($docente===TRUE){
-			require_once('Views/Docente/Informacion/diplomados.php');
-		}
-		else {
-			require_once('Views/Docente/Informacion/diplomados.php');
-		}
-
+		$datos =$docente->insert($titulo,$año,$instituto,$tablas[$tabla],$usuario);
+		
+		require_once('Views/Docente/Informacion/diplomados.php');
+		
 	}
 	function buscar(){
 		$docente = new DocenteModel();
