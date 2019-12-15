@@ -48,6 +48,7 @@ class UsuarioSession
 		$docente = new Usuario();
 		require_once('Views/Usuario/add.php');
 	}
+    /*Agrega esta funcion*/
     function save(){
         $datos = array($_POST['usuario'],$_POST['contrasena'],$_POST['rol'],
         $_POST['primer_nombre'], $_POST['segundo_nombre'], $_POST['primer_apellido'],

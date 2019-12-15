@@ -28,6 +28,15 @@ class DocenteModel{
         }
         return $this->docentes;
     }
+    public function insert($titulo,$año,$instituto,$archivo,$tabla,$usuario){
+        $registro = $this->db->query("insert into $tabla values ('$titulo','$año','$instituto','$archivo','$usuario');");
+        
+        if ($registro === TRUE) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
 }
 
 ?>

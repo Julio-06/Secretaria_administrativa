@@ -1,6 +1,9 @@
-<div class="container">
-    
-    <table class="table table-hover">
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+<h2 class="mt-2">Información institucional</h2>
+<div class="table-responsive">
+              
+  <table class="table table-striped table-sm table-hover">
       <thead>
         <tr>
           <th>ID</th>
@@ -26,3 +29,4 @@
       </tbody>
     </table>
   </div>
+</main>

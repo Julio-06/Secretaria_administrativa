@@ -13,6 +13,9 @@ class  Session{
     public function id($id){
         $_SESSION['id']=$id;
     }
+    public function idU($id){
+        $_SESSION['idU']=$id;
+    }
     public function getid(){
         return $_SESSION['id'];
     }

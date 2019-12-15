@@ -1,6 +1,6 @@
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
     <h2 class="mt-2">Registro de nuevo usuario</h2>
-    <form class="needs-validation" id="eleccion" action="?controller=Usuario&&action=save" method="POST" >
+    <form class="" id="eleccion" action="?controller=Usuario&&action=save" method="POST" novalidate>
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group row">
@@ -22,7 +22,7 @@
                 </div>
             </div>
         </div>
-         <!-- 
+        <!-- 
         <div class="row">   
             <div class="col-md-6">
                 <div class="form-group row">
@@ -33,7 +33,7 @@
                 </div>
             </div>
         </div> 
-         \-->
+        \-->
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group row">

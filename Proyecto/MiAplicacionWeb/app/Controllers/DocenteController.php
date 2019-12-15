@@ -19,6 +19,35 @@ class DocenteController
 		$datos = $docente->listar();
 		require_once('Views/Docente/index.php');
 	}
+	function Agregar(){
+		$docente = new DocenteModel();
+		$tabla=$_GET['table'];
+		$titulo = $_POST['titulo'];
+		$año=$_POST['año'];
+		$instituto=$_POST['institucion'];
+		$archivo=$_POST['tituload'];
+
+		$usuario=$_SESSION['idU'];
+
+		$tablas=array("docentes",
+					  "residencia_docentes",
+					  "informacion_institucional_docentes",
+					  "familiares_emergencia_docentes",
+					  "laboral_docentes",
+					  "capacitaciones_docentes",
+					  "diplomados_docentes",
+					  "registros_academicos_docentes",
+					);
+
+		$docente->insert($titulo,$año,$instituto,$archivo,$tablas[$tabla],$usuario);
+		if($docente===TRUE){
+			require_once('Views/Docente/Informacion/diplomados.php');
+		}
+		else {
+			require_once('Views/Docente/Informacion/diplomados.php');
+		}
+
+	}
 	function buscar(){
 		$docente = new DocenteModel();
 		$id=$_SESSION['id'];
@@ -43,6 +72,7 @@ class DocenteController
 
 			foreach ($idusuario as $dato) {
 				$iddoc=$dato["iddocentes"];
+				$_SESSION['idU']=$iddoc;
 			}
 			$datos = $docente->consultar($iddoc,$tablas[$tabla]);
 		}
