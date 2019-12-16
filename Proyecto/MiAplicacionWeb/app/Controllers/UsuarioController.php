@@ -44,6 +44,17 @@ class UsuarioSession
 
         return $rol;
     }
+    function listar(){
+        $model = new Usuario();
+        if ($i == 0){
+        $docent = $model->list($i);
+        $i++;
+        }
+        elseif (i == 1){
+        $admint = $model->list($i);
+        }
+		require_once('Views/Usuario/listado.php');
+    }
     function add(){
 		$docente = new Usuario();
 		require_once('Views/Usuario/add.php');

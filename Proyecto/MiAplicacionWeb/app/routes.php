@@ -7,7 +7,7 @@ $controllers = array(
     'Home' => ['index'],
     'Docente' => ['index', 'add', 'save','buscar','agregar','insert','editar','update','eliminar','confirmacion'],
     'Administrativo' => ['index'],
-    'Usuario' => ['add','save']
+    'Usuario' => ['add','save','listar']
 );
 
 if (array_key_exists($controller, $controllers)) {
