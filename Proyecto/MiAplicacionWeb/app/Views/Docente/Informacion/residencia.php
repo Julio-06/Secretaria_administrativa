@@ -18,7 +18,8 @@
         <th>Distrito</th>
         <th>Corregimiento</th>
         <th>Dirrección actual</th>
-        <th>Docente_ID</th>
+        <th>Opciones</th>
+       
       </tr>
     </thead>
     <tbody>
@@ -30,7 +31,7 @@
                 <td><?php echo $dato["distrito"]?></td>
                 <td><?php echo $dato["corregimiento"]?></td>
                 <td><?php echo $dato["direccion_actual"]?></td>
-                <td><?php echo $dato["docente_id"]?></td>
+                
                 <td>
           <a href="?controller=Docente&action=editar&table=<?php echo $_GET['table']; ?>&no=<?php echo $dato['idresidencia']?>" class="btn btn-danger" >
           Editar

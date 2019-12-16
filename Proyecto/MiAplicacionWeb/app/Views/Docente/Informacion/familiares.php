@@ -20,6 +20,7 @@
           <th>Apellido</th>
           <th>Localizar_emergencia</th>
           <th>Prioridad_localizar</th>
+        <th>Opciones</th>
           
         </tr>
       </thead>
@@ -59,7 +60,7 @@
           <th>Telefono_residencia</th>
           <th>Telefono_oficina</th>
           <th>Correo_electronico</th>
-          <th>Docente_Id</th>
+          
         </tr>
       </thead>
       <tbody>
@@ -72,7 +73,7 @@
                   <td><?php echo $dato["telefono_residencia"]?></td>
                   <td><?php echo $dato["telefono_oficina"]?></td>
                   <td><?php echo $dato["correo_electronico"]?></td>
-                  <td><?php echo $dato["docente_id"]?></td>
+                  
                   
               </tr>
           <?php }

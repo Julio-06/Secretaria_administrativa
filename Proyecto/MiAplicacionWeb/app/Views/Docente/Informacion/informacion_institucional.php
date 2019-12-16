@@ -18,7 +18,8 @@
           <th>Correo_institucional</th>
           <th>Telefono_institucional</th>
           <th>Extensión</th>
-          <th>Docente_Id</th>
+          <th>Opciones</th>
+
         </tr>
       </thead>
       <tbody>
@@ -29,7 +30,7 @@
                   <td><?php echo $dato["correo_institucional"]?></td>
                   <td><?php echo $dato["telefono_institucional"]?></td>
                   <td><?php echo $dato["extension"]?></td>
-                  <td><?php echo $dato["docente_id"]?></td>
+                  
                   <td>
           <a href="?controller=Docente&action=editar&table=<?php echo $_GET['table']; ?>&no=<?php echo $dato['idinformacion_institucional']?>" class="btn btn-danger" >
           Editar

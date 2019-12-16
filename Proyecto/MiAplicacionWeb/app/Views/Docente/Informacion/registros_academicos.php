@@ -19,7 +19,8 @@
           <th>Año</th>
           <th>Institución</th>
           
-          <th>Docente_Id</th>
+        <th>Opciones</th>
+          
         </tr>
       </thead>
       <tbody>
@@ -32,7 +33,7 @@
                   <td><?php echo $dato["año"]?></td>
                   <td><?php echo $dato["institucion"]?></td>
                   
-                  <td><?php echo $dato["docente_id"]?></td>
+                  
                   <td>
           <a href="?controller=Docente&action=editar&table=<?php echo $_GET['table']; ?>&no=<?php echo $dato['idregistros_academicos']?>" class="btn btn-danger" >
           Editar

@@ -3,9 +3,7 @@
 <!-- inicia Modalpara insertar  -->
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
-  Insertar
-</button>
+
 
 <?php require_once('Views/Docente/Modals/insert.php');   ?>
 <div class="table-responsive">
@@ -21,6 +19,7 @@
         <th>Celular</th>
         <th>Telefono de casa</th>
         <th>Cedula</th>
+        <th>Opciones</th>
         
       </tr>
     </thead>
@@ -41,9 +40,7 @@
           <a href="?controller=Docente&action=editar&table=<?php echo $_GET['table']; ?>&no=<?php echo $dato['iddocentes']?>" class="btn btn-danger" >
           Editar
           </a>
-          <a href="?controller=Docente&action=confirmacion&table=<?php echo $_GET['table']; ?>&no=<?php echo $dato['iddocentes']?>" class="btn btn-danger" >
-            Eliminar
-          </a>
+         
           </td>
             </tr>
         <?php }
@@ -76,7 +73,7 @@
               <td><?php echo $dato["estado_civil"]?></td>
               <td><?php echo $dato["correo_personal1"].' '. $dato["correo_personal2"]?></td>
               
-              <td><?php echo $dato["usuario_id"]?></td>
+              
           </tr>
         <?php }
         ?>

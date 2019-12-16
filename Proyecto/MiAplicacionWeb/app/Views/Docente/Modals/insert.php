@@ -39,25 +39,34 @@
             <form action="?controller=Docente&action=agregar&table=<?php echo $_GET['table']; ?>" method="POST">
               <div class="form-group">
               <label for="sel1">Seleccione su provincia:</label>
-                <select class="form-control" id="sel1" name="provincia" placeholder="Provincias">
-                    <option>Bocas del Toro</option>
-                    <option>Coclé</option>
-                    <option>Colón</option>
-                    <option>Chiriquí</option>
-                    <option>Darién</option>
-                    <option>Herrera</option>
-                    <option>Los Santos</option>
-                    <option>Panamá</option>
-                    <option>Veraguas</option>
-                    <option>Panamá Oeste</option>
-                </select>
+            <select class="form-control" id="prueba"  name="provincia" onchange="cambia()">
+            
+                <option value="Provincia">Provincia</option>
+                <option value="Coclé">Coclé</option>
+                <option value="Colón">Colón</option>
+                <option value="Chiriquí">Chiriquí</option>
+                <option value="Darién">Darién</option>
+                <option value="Herrera">Herrera</option>
+                <option value="Los Santos">Los Santos</option>
+                <option value="Panamá">Panamá</option>
+                <option value="Veraguas">Veraguas</option>
+                <option value="Panamá Oeste">Panamá Oeste</option>
+                <option value="Bocas del Toro">Bocas del Toro</option>
+                <option value="Comarca Guna Yala">Comarca Guna Yala</option>
+                <option value="Comarca Ngobe Buglé">Comarca Ngobe Buglé</option>
+                <option value="Comarca Emberá-Wounaan">Comarca Emberá-Wounaan</option>
+                
+        </select>
                   
                   
               </div>
 
               <div class="form-group">
                   
-                  <input name="distrito" type="text" class="form-control" placeholder="Distrito" >
+              <label for="sel1">Seleccione su distrito:</label>  
+              <select class="form-control" name="distrito" id="opt">
+              <option value="-">-
+              </select>
               </div>
               <div class="form-group">
                   
@@ -341,6 +350,102 @@
   </div>
 </div>   
 <!--termina  Modalpara insertar  -->
-
+<script type="text/javascript">
+			//1) Definir Las Variables Correspondintes
+			var opt_1 = new Array ("-","Penonomé","Aguadulce","Antón","La Pintada","Natá","Olá");
+			var opt_2 = new Array ("-","Colón","Chagres","Donoso","Omar Torrijos Herrera","Portobelo","Santa Isabel");
+			var opt_3 = new Array ("-","David", "Alanje", "Barú", "Boquerón","Boquete","Bugaba","Dolega","Gualaca","Remedios","Renacimiento","San Félix","San Lorenzo","Tierras Altas","Tolé");
+            var opt_4 = new Array ("-", "Chepigana", "Pinogana", "Santa Fe");
+            var opt_5 = new Array ("-", "Chitré", "Las Minas", "Los Pozos", "Ocú", "Parita", "Pesé", "Santa María");
+            var opt_6 = new Array ("-", "Las Tablas", "Guararé", "Los Santos", "Macaracas", "Pedasí", "Pocrí", "Tonosí");
+            var opt_7 = new Array ("-", "Panamá", "Balboa", "Chepo", "Chimán", "San Miguelito", "Taboga");
+            var opt_8 = new Array ("-", "Santiago", "Atalaya", "Calobre", "Cañazas", "La Mesa", "Las Palmas", "Mariato", "Montijo", "Río de Jesús", "San Francisco", "Santa Fe", "Soná");
+            var opt_9 = new Array ("-", "La Chorrera", "Arraiján", "Capira", "Chame","San Carlos");
+            var opt_10 = new Array ("-", "Bocas del Toro", "Almirante", "Changuinola", "Chiriquí Grande");
+            var opt_11 = new Array ("-", "Narganá", "Ailigandí", "Puerto Obaldía", "Tubualá");
+            var opt_12 = new Array ("-", "Besikó", "Jirondai", "Kankintú", "Kusapín","Mironó","Müna","Nole Duima","Ñürüm","Santa Catalina o Calovébora");
+            var opt_13 = new Array ("-", "Cémaco", "Sambú");
+			// 2) crear una funcion que permita ejecutar el cambio dinamico
+			
+			function cambia(){
+                
+				var cosa;
+				//Se toma el vamor de la "cosa seleccionada"
+                cosa = document.getElementById('prueba').value;
+                switch (cosa) {
+                    case "Provincia":
+                       cosa=0; 
+                    break;
+                    case "Coclé":
+                        cosa=1; 
+                    break;
+                    case "Colón":
+                        cosa=2; 
+                    break;
+                    case "Chiriquí":
+                        cosa=3; 
+                    break;
+                    case "Darién":
+                        cosa=4; 
+                    break;
+                    case "Herrera":
+                        cosa=5; 
+                    break;
+                    case "Los Santos":
+                        cosa=6; 
+                    break;
+                    case "Panamá":
+                        cosa=7; 
+                    break;
+                    case "Veraguas":
+                        cosa=8; 
+                    break;
+                    case "Panamá Oeste":
+                        cosa=9; 
+                    break;
+                    case "Bocas del Toro":
+                        cosa=10; 
+                    break;
+                    case "Comarca Guna Yala":
+                        cosa=11; 
+                    break;
+                    case "Comarca Ngobe Buglé":
+                        cosa=12; 
+                    break;
+                    case "Comarca Emberá-Wounaan":
+                        cosa=13; 
+                    break;
+                
+                    default:
+                        break;
+                }
+				//se chequea si la "cosa" esta definida
+				if(cosa!=0){
+					//selecionamos las cosas Correctas
+					mis_opts=eval("opt_" + cosa);
+					//se calcula el numero de cosas
+					num_opts=mis_opts.length;
+					//marco el numero de opt en el select
+					document.getElementById('opt').length = num_opts;
+					//para cada opt del array, la pongo en el select
+					for(i=0; i<num_opts; i++){
+						document.getElementById('opt').options[i].value=mis_opts[i];
+						document.getElementById('opt').options[i].text=mis_opts[i];
+					}
+					}else{
+						//si no habia ninguna opt seleccionada, elimino las cosas del select
+						document.getElementById('opt').length = 1;
+						//ponemos un guion en la unica opt que he dejado
+						document.getElementById('opt').options[0].value="-";
+						document.getElementById('opt').options[0].text="-";
+					}
+					//hacer un reset de las opts
+					document.getElementById('opt').options[0].selected = true;
+					
+				}
+			
+			
+		
+		</script>
 
 </main>

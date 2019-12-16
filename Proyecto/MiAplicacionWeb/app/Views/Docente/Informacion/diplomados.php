@@ -18,7 +18,7 @@
         <th>Título</th>
         <th>Año</th>
         <th>Institución</th>
-        <th>Docente_Id</th>
+        
         <th>Opciones</th>
         </tr>
     </thead>
@@ -32,7 +32,7 @@
           <td><?php echo $dato["titulo_obtenido"]?></td>
           <td><?php echo $dato["año"]?></td>
           <td><?php echo $dato["institucion"]?></td>
-          <td><?php echo $dato["docente_id"]?></td>
+          
           
           <td>
           <a href="?controller=Docente&action=editar&table=<?php echo $_GET['table']; ?>&no=<?php echo $dato['iddiplomados']?>" class="btn btn-danger" >

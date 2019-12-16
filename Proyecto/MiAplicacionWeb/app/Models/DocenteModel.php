@@ -132,8 +132,13 @@ class DocenteModel{
             return FALSE;
         }
     }
-    public function updateDocentes($id,$tabla,$titulo,$año,$intitucion){
-        $update = $this->db->query("update $tabla set titulo_obtenido='$titulo',año='$año',institucion='$intitucion'  where iddiplomados = '$id';");
+    public function updateDocentes($id,$tabla,$nombre1,$nombre2,$apellido1,$apellido2,$fecha,$celular,$telefono,$correo1,$correo2,$cedula,$genero,$sangre,$peso,$estatura,$salud,$estado_civil){
+        $update = $this->db->query(
+            "update $tabla set primer_nombre='$nombre1', segundo_nombre='$nombre2', primer_apellido='$apellido1',
+            segundo_apellido='$apellido2', fecha_de_nacimiento='$fecha', celular='$celular', telefono_casa='$telefono',
+            cedula='$cedula', genero='$genero', sangre='$sangre', peso='$peso', estatura='$estatura', estado_salud='$salud',
+            estado_civil='$estado_civil', correo_personal1='$correo1', correo_personal2='$correo2'
+            where iddocentes = '$id';");
         if ($update==TRUE) {
             return TRUE;
         }

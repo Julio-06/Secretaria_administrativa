@@ -190,6 +190,28 @@ class DocenteController
 
 		switch ($tabla) {
 
+			case '0':
+				$nombre1=$_POST['primer_nombre'];
+				$nombre2=$_POST['segundo_nombre'];
+				$apellido1=$_POST['primer_apellido'];
+				$apellido2=$_POST['segundo_apellido'];
+				$fecha=$_POST['fecha_de_nacimiento'];
+				$celular=$_POST['celular'];
+				$telefono=$_POST['telefono_casa'];
+				$correo1=$_POST['correo1'];
+				$correo2=$_POST['correo2'];
+				$cedula=$_POST['cedula'];
+				$genero=$_POST['genero'];
+				$sangre=$_POST['sangre'];
+				$peso=$_POST['peso'];
+				$estatura=$_POST['estatura'];
+				$salud=$_POST['estado_salud'];
+				$estado_civil=$_POST['estado_civil'];
+	
+				$resp=$docente->updateDocentes($id,$tablas[$tabla],$nombre1,$nombre2,$apellido1,$apellido2,$fecha,$celular,$telefono,$correo1,$correo2,$cedula,$genero,$sangre,$peso,$estatura,$salud,$estado_civil);
+	
+			break;
+
 			case '1':
 			$provincia=$_POST['provincia'];
 			$distrito=$_POST['distrito'];

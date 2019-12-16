@@ -22,7 +22,8 @@
           <th>Rol</th>
           <th>Horas</th>
           <th>Institución</th>
-          <th>Docente_Id</th>
+        <th>Opciones</th>
+          
         </tr>
       </thead>
       <tbody>
@@ -35,7 +36,7 @@
                       <td><?php echo $dato["rol"]?></td>
                       <td><?php echo $dato["horas"]?></td>
                       <td><?php echo $dato["institucion"]?></td>
-                      <td><?php echo $dato["docente_id"]?></td>
+                      
                       <td>
                       <a href="?controller=Docente&action=editar&table=<?php echo $_GET['table']; ?>&no=<?php echo $dato['idcapacitaciones']?>" class="btn btn-danger" >
                       Editar

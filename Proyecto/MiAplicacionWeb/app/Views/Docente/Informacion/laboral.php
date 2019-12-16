@@ -19,7 +19,8 @@
           <th>Cargo administrativo</th>
           <th>Ubicación</th>
           <th>Repre. Organos de Gobierno</th>
-          <th>Docente_Id</th>
+        <th>Opciones</th>
+          
         </tr>
       </thead>
       <tbody>
@@ -32,7 +33,7 @@
                   <td><?php echo $dato["cargo_administrativo"]?></td>
                   <td><?php echo $dato["ubicacion"]?></td>
                   <td><?php echo $dato["repre_organos_gobierno"]?></td>
-                  <td><?php echo $dato["docente_id"]?></td>
+                  
                   <td>
           <a href="?controller=Docente&action=editar&table=<?php echo $_GET['table']; ?>&no=<?php echo $dato['iddocentes_laboral']?>" class="btn btn-danger" >
           Editar
