@@ -5,7 +5,7 @@
 $controllers = array(
     'Login' => ['validar','recuperar','inicio','salir'],
     'Home' => ['index'],
-    'Docente' => ['index', 'add', 'save','buscar','agregar','insert'],
+    'Docente' => ['index', 'add', 'save','buscar','agregar','insert','editar','update','eliminar','confirmacion'],
     'Administrativo' => ['index'],
     'Usuario' => ['add','save']
 );
