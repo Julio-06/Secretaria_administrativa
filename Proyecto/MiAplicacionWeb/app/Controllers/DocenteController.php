@@ -37,15 +37,24 @@ class DocenteController
 					  "registros_academicos_docentes",
 					);
 
-
-		$eliminado=$docente->delete($id,$tablas[$tabla]);
-		if($eliminado==TRUE){
-			include_once 'Views/Docente/mensajes/confirmacion.php';
+		if ($id==NULL) {
+			
+			include_once 'Views/Docente/mensajes/eliminar_error.php';
 		}
 		else {
-			include_once 'Views/Docente/mensajes/error.php';
-			
+			$eliminado=$docente->delete($id,$tablas[$tabla]);
+			if($eliminado==TRUE){
+				include_once 'Views/Docente/mensajes/confirmacion.php';
+			}
+			else {
+				$eliminado=FALSE;
+				include_once 'Views/Docente/mensajes/eliminar_error.php';
+
+				
+			}
 		}
+		
+		
 	}
 	function agregar(){
 		$docente = new DocenteModel();
@@ -155,7 +164,14 @@ class DocenteController
 					);
 
 		$consulta = $docente->consultaT($id,$tablas[$tabla]);
-		require_once('Views/Docente/editar.php');
+		if (sizeof($consulta)>0) {
+			require_once('Views/Docente/editar.php');
+		}
+		else {
+			
+			require_once('Views/Docente/mensajes/actualizar_error.php');
+		}
+		
 	}
 	function update(){
 		$docente = new DocenteModel();

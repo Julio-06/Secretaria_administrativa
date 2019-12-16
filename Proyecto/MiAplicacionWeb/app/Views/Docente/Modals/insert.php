@@ -20,7 +20,7 @@
                 </div>
 
                 <div class="form-group">
-                    
+                    <label for="">Fecha de finalización</label>
                     <input name="año" type="date" class="form-control" placeholder="Año" >
                 </div>
                 <div class="form-group">
@@ -29,7 +29,7 @@
                 </div>
 
                 
-                <button type="submit" class="btn btn-dark">Enviar</button>         
+                         
               </form>
         
             <?php break; ?>
@@ -38,8 +38,21 @@
           
             <form action="?controller=Docente&action=agregar&table=<?php echo $_GET['table']; ?>" method="POST">
               <div class="form-group">
+              <label for="sel1">Seleccione su provincia:</label>
+                <select class="form-control" id="sel1" name="provincia" placeholder="Provincias">
+                    <option>Bocas del Toro</option>
+                    <option>Coclé</option>
+                    <option>Colón</option>
+                    <option>Chiriquí</option>
+                    <option>Darién</option>
+                    <option>Herrera</option>
+                    <option>Los Santos</option>
+                    <option>Panamá</option>
+                    <option>Veraguas</option>
+                    <option>Panamá Oeste</option>
+                </select>
                   
-                  <input name="provincia" type="text" class="form-control" placeholder="Provincia" >
+                  
               </div>
 
               <div class="form-group">
@@ -52,12 +65,13 @@
               </div>
               <div class="form-group">
                   
-                  <input name="direccion_actual" type="text" class="form-control" placeholder="Direccion_actual" >
+                  <input  rows="5" name="direccion_actual" type="text" class="form-control" placeholder="Direccion_actual" >
               </div>
              
 
               
-              <button type="submit" class="btn btn-dark">Enviar</button>         
+              <button type="submit" class="btn btn-dark">Enviar</button> 
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>   
             </form>
               
             <?php break;?>
@@ -66,20 +80,21 @@
             <form action="?controller=Docente&action=agregar&table=<?php echo $_GET['table']; ?>" method="POST">
               <div class="form-group">
                   
-                  <input name="correo_institucional" type="text" class="form-control" placeholder="Correo_institucional" >
+                  <input name="correo_institucional" type="email" class="form-control" placeholder="Correo_institucional" >
               </div>
 
               <div class="form-group">
                   
-                  <input name="telefono_institucional" type="text" class="form-control" placeholder="Telefono_institucional" >
+                  <input name="telefono_institucional" type="number" class="form-control" placeholder="Telefono_institucional" >
               </div>
               <div class="form-group">
                   
-                  <input name="extension" type="text" class="form-control" placeholder="Extension" >
+                  <input name="extension" type="number" class="form-control" placeholder="Extension" >
               </div>
 
               
-              <button type="submit" class="btn btn-dark">Enviar</button>         
+              <button type="submit" class="btn btn-dark">Enviar</button> 
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>     
             </form>
 
              <?php break;?>
@@ -101,36 +116,43 @@
                     <input name="apellido" type="text" class="form-control" placeholder="Apellido" >
                 </div>
                 <div class="form-group">
+                <label for="sel2">¿Localizar en caso de emergencia?:</label>
+                <select  class="form-control" id="sel2" name="localizar_emergencia">
+                    <option>Si</option>
+                    <option>No</option>
                     
-                    <input name="localizar_emergencia" type="text" class="form-control" placeholder="Localizar_emergencia" >
+                </select>
+                    
+                    
                 </div>
                 <div class="form-group">
                     
-                    <input name="prioridad_localizar" type="" class="form-control" placeholder="Prioridad_localizar" >
+                    <input name="prioridad_localizar" type="number" class="form-control" placeholder="Prioridad_localizar" >
                 </div>
                 <div class="form-group">
-                    
+                    <label for="">Fecha de nacimiento:</label>
                     <input name="fecha_de_nacimiento_f" type="date" class="form-control" placeholder="Fecha_de_nacimiento" >
                 </div>
                 <div class="form-group">
                     
-                    <input name="celular_f" type="text" class="form-control" placeholder="Celular" >
+                    <input name="celular_f" type="number" class="form-control" placeholder="Celular" >
                 </div>
                 <div class="form-group">
                     
-                    <input name="telefono_residencia" type="text" class="form-control" placeholder="Telefono_residencia" >
+                    <input name="telefono_residencia" type="number" class="form-control" placeholder="Telefono_residencia" >
                 </div>
                 <div class="form-group">
                     
-                    <input name="telefono_oficina" type="text" class="form-control" placeholder="Telefono_oficina" >
+                    <input name="telefono_oficina" type="number" class="form-control" placeholder="Telefono_oficina" >
                 </div>
                 <div class="form-group">
                     
-                    <input name="correo_electronico" type="text" class="form-control" placeholder="Correo_electronico" >
+                    <input name="correo_electronico" type="email" class="form-control" placeholder="Correo_electronico" >
                 </div>
 
-                
-                <button type="submit" class="btn btn-dark">Enviar</button>         
+                <button type="submit" class="btn btn-dark">Enviar</button> 
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button> 
+                        
               </form>
             <?php break;?>
 
@@ -138,29 +160,76 @@
               
               <form action="?controller=Docente&action=agregar&table=<?php echo $_GET['table']; ?>" method="POST">
                 <div class="form-group">
+                <label for="sel2">Categoria de docente:</label>
+                    <select class="form-control" id="sel2" name="categoria_docente">
+                    <option>Completo</option>
+                    <option>Parcial</option>
                     
-                    <input name="categoria_docente" type="text" class="form-control" placeholder="Categoria_docente" >
+                    </select>
                 </div>
 
                 <div class="form-group">
                     
-                    <input name="departamento" type="text" class="form-control" placeholder="Departamento" >
+                <label for="sel2">Departamento:</label>
+                <select  class="form-control" id="sel2" name="departamento">
+                    <option>No definido</option>
+                    <option>Arquitectura y Redes de Computadoras</option>
+                    <option>Computación y Simulación de Sistemas</option>
+                    <option>Ingenieria de Software</option>
+                    <option>Programación de Computadoras</option>
+                    <option>Sistemas de Información,Control y Evaluación de Recursos Informáticos</option>
+                </select>
                 </div>
                 <div class="form-group">
+                <label for="sel2">Cargo administrativo:</label>
+                <select  class="form-control" id="sel2" name="cargo_administrativo">
+                    <option>Sin cargo</option>
+                    <option>Decano</option>
+                    <option>Vicedecano</option>
+                    <option>Jefe de Departamento</option>
+                    <option>Coordinador de Carrera</option>
+                    <option>Coordinador de FISC en Centro Regional</option>
+                    <option>Coordinador de Extension</option>
+                    <option>Coordinador de Postgrado</option>
+                    <option>Coordinador de Investigación</option>
+                    <option>Director de Centro Regional</option>
+                    <option>Subdirector Académico de Centro Regional</option>
+                    <option>Subdirector administrativo de Centro Regional</option>
+                    <option>Subdirector de investigación,postgrado y extension de Centro Regional</option>
+                    <option>Coordinador de Extension en Centro Regional</option>
+                    <option>Coordinador de Postgrado en Centro Regional</option>
+                    <option>Coordinador de Investigación en Centro Regional</option>
+                </select>
                     
-                    <input name="cargo_administrativo" type="text" class="form-control" placeholder="Cargo_administrativo" >
+                    
                 </div>
                 <div class="form-group">
+                <label for="sel2">Ubicación:</label>
+                <select  class="form-control" id="sel2" name="ubicacion">
+                    <option>Sede</option>
+                    <option>Azuero</option>
+                    <option>Bocas del Toro</option>
+                    <option>Chiriquí</option>
+                    <option>Coclé</option>
+                    <option>Colón</option>
+                    <option>Panamá Oeste</option>
+                    <option>Veraguas</option>
+                </select>
                     
-                    <input name="ubicacion" type="text" class="form-control" placeholder="Ubicación" >
                 </div>
                 <div class="form-group">
-                    
-                    <input name="repre_organos_gobierno" type="text" class="form-control" placeholder="Repre_organos_gobierno" >
-                </div>
-
-                
-                <button type="submit" class="btn btn-dark">Enviar</button>         
+                <label for="sel2">Representación ante órganos de gobierno:</label>
+                <select  class="form-control" id="sel2" name="repre_organos_gobierno">
+                    <option>Ninguno</option>
+                    <option>Junta de Facultad</option>
+                    <option>Consejo General</option>
+                    <option>Consejo Académico</option>
+                    <option>Consejo de Investigación</option>
+                    <option>Consejo administrativo</option>
+                </select>         
+                </div>   
+                <button type="submit" class="btn btn-dark">Enviar</button> 
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>    
               </form>
             <?php break;?>
 
@@ -173,7 +242,7 @@
                 </div>
 
                 <div class="form-group">
-                    
+                    <label for="">Fecha de finalización:</label>
                     <input name="año" type="date" class="form-control" placeholder="Año" >
                 </div>
                 <div class="form-group">
@@ -189,8 +258,9 @@
                     <input name="institucion" type="text" class="form-control" placeholder="Institución" >
                 </div>
 
-                
-                <button type="submit" class="btn btn-dark">Enviar</button>         
+                <button type="submit" class="btn btn-dark">Enviar</button> 
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button> 
+                        
               </form>
             <?php break;?>
 
@@ -202,7 +272,7 @@
                 </div>
 
                 <div class="form-group">
-                    
+                    <label for="">Fecha de finalización:</label>
                     <input name="año" type="date" class="form-control" placeholder="Año" >
                 </div>
                 <div class="form-group">
@@ -210,8 +280,9 @@
                     <input name="institucion" type="text" class="form-control" placeholder="Institución" >
                 </div>
 
-                
-                <button type="submit" class="btn btn-dark">Enviar</button>         
+                <button type="submit" class="btn btn-dark">Enviar</button> 
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button> 
+                        
               </form>            
               
           <?php break; ?>
@@ -225,12 +296,21 @@
                   <input name="titulo" type="text" class="form-control" placeholder="Título obtenido" >
               </div>
               <div class="form-group">
+              <label for="sel2">Nivel:</label>
+                <select  class="form-control" id="sel2" name="nivel">
+                    <option>Diplomado</option>
+                    <option>Técnico</option>
+                    <option>Licienciatura</option>
+                    <option>Postgrado</option>
+                    <option>Maestría</option>
+                    <option>Doctorado</option>
+                </select>  
                   
-                  <input name="nivel" type="text" class="form-control" placeholder="Nivel obtenido" >
+                  
               </div>
 
               <div class="form-group">
-                  
+                  <label for="">Fecha de finalización:</label>
                   <input name="año" type="date" class="form-control" placeholder="Año" >
               </div>
               <div class="form-group">
@@ -239,7 +319,8 @@
               </div>
 
               
-              <button type="submit" class="btn btn-dark">Enviar</button>         
+              <button type="submit" class="btn btn-dark">Enviar</button> 
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>        
             </form>            
           
           <?php break; ?>
@@ -251,7 +332,8 @@
    <?php   }  ?>
    </div>
       <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        
+          
           
       </div>
                             

@@ -14,16 +14,8 @@ elseif ($resp==FALSE) {
 </div>
 
 
-<?php }
-elseif ($eliminado==FALSE) { ?>
-    <div class="alert alert-danger">
-    <strong>Eliminación Fallida!</strong> La eliminación del registro no se  ha realizado exitosamente <a href="?controller=Docente&action=buscar&table=<?php echo $_GET['table']; ?>" class="alert-link">Cerrar</a>.
-    </div>
+<?php } 
 
 
-
-
-<?php
-}
 ?>
 </main>
