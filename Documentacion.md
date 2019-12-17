@@ -28,3 +28,6 @@ y para acceder como docente es:
 
 user:		jt@gmail.com
 contra:	12345
+
+
+IMPORTANTE: Jahir ya no forma parte del proyecto
