@@ -40,28 +40,32 @@ class Usuario{
     public function getRol(){
         return $this->usuariorg;
     }
-    public function list($i){
-        if($i==0){
-        $consulta = $this->db->query("select * from docentes;");
+    public function list(){
+        $consulta = $this->db->query("select docentes.primer_nombre, docentes.primer_apellido, docentes.cedula,docentes.correo_personal1,
+        usuarios.id_rol from docentes inner join usuarios on usuarios.idusuarios = docentes.usuario_id union select administrativos.primer_nombre,
+        administrativos.primer_apellido, administrativos.cedula, administrativos.correo_personal1, usuarios.id_rol from administrativos inner join usuarios
+        on usuarios.idusuarios = administrativos.usuario_id order by primer_nombre ASC");
         while($doc = $consulta->fetch_assoc()){
+            if($doc['id_rol'] == 2){
+            $doc['id_rol']='administrativo';
             $this->docentes[] = $doc;
+            }
+            elseif($doc['id_rol'] == 3){
+                $doc['id_rol']='docente';
+                $this->docentes[] = $doc; 
+            }
         }
         return $this->docentes;
         }  
-        elseif($i==1){
-        $consulta1 = $this->db->query("select * from administrativos;");
-        while($adm = $consulta1->fetch_assoc()){
-            $this->administrativos[] = $adm;
-        }
-        return $this->administrativos;
-        }
+       
         
-        else{
-            die;
-        }
-   
-    }
-
+    
+    public function search($id,$n){
+            
+            $consul = $this->db->query("SELECT * FROM docentes where cedula='$id' union select * from  administrativos where cedula='$id'");
+            $this->consuli = $consul->fetch_assoc();
+            return($this->consuli);
+       }
     /*AGREGAR ESTA FUNCION*/
     public function registrar($datos){
         /*print_r($prueba);

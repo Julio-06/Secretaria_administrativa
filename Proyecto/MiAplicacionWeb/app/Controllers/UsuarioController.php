@@ -46,14 +46,14 @@ class UsuarioSession
     }
     function listar(){
         $model = new Usuario();
-        if ($i == 0){
-        $docent = $model->list($i);
-        $i++;
-        }
-        elseif (i == 1){
-        $admint = $model->list($i);
-        }
+        $users = $model->list();
 		require_once('Views/Usuario/listado.php');
+    }
+    function buscar(){
+        $model = new Usuario();
+        $id =$_GET['no'];
+        $User = $model->search($id,$n);
+        require_once('Views/Usuario/buscado.php');
     }
     function add(){
 		$docente = new Usuario();

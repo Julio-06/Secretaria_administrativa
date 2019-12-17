@@ -6,11 +6,7 @@
                 Inicio
             </a>
         </li>
-        <li class="nav-item ">
-            <a class="nav-link text-light" href="#">
-                Cuenta
-            </a>
-        </li>
+        
         <li class="nav-item">
             <div class="btn-group dropright">
                 <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
