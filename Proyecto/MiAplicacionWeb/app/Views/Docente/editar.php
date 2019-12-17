@@ -65,11 +65,11 @@
 
                     <div class="form-group">
                         
-                        <input name="telefono_institucional" type="number" class="form-control" placeholder="Telefono_institucional" value="<?php echo $dato["telefono_institucional"]?>">
+                        <input name="telefono_institucional" type="text" class="form-control" placeholder="Telefono_institucional" value="<?php echo $dato["telefono_institucional"]?>">
                     </div>
                     <div class="form-group">
                         
-                        <input name="extension" type="number" class="form-control" placeholder="Extension" value="<?php echo $dato["extension"]?>">
+                        <input name="extension" type="text" class="form-control" placeholder="Extension" value="<?php echo $dato["extension"]?>">
                     </div>
 
                     <a href="?controller=Docente&action=buscar&table=<?php echo $_GET['table']; ?>" class="btn btn-dark">Atras</a> 
@@ -114,15 +114,15 @@
               </div>
               <div class="form-group">
                   
-                  <input name="celular_f" type="number" class="form-control" placeholder="Celular" value="<?php echo $dato["celular_f"]?>">
+                  <input name="celular_f" type="text" class="form-control" placeholder="Celular" value="<?php echo $dato["celular_f"]?>">
               </div>
               <div class="form-group">
                   
-                  <input name="telefono_residencia" type="number" class="form-control" placeholder="Telefono_residencia" value="<?php echo $dato["telefono_residencia"]?>">
+                  <input name="telefono_residencia" type="text" class="form-control" placeholder="Telefono_residencia" value="<?php echo $dato["telefono_residencia"]?>">
               </div>
               <div class="form-group">
                   
-                  <input name="telefono_oficina" type="number" class="form-control" placeholder="Telefono_oficina" value="<?php echo $dato["telefono_oficina"]?>">
+                  <input name="telefono_oficina" type="text" class="form-control" placeholder="Telefono_oficina" value="<?php echo $dato["telefono_oficina"]?>">
               </div>
               <div class="form-group">
                   

@@ -94,11 +94,11 @@
 
               <div class="form-group">
                   
-                  <input name="telefono_institucional" type="number" class="form-control" placeholder="Telefono_institucional" >
+                  <input name="telefono_institucional" type="text" class="form-control" placeholder="Telefono_institucional" >
               </div>
               <div class="form-group">
                   
-                  <input name="extension" type="number" class="form-control" placeholder="Extension" >
+                  <input name="extension" type="text" class="form-control" placeholder="Extension" >
               </div>
 
               
@@ -144,15 +144,15 @@
                 </div>
                 <div class="form-group">
                     
-                    <input name="celular_f" type="number" class="form-control" placeholder="Celular" >
+                    <input name="celular_f" type="text" class="form-control" placeholder="Celular" >
                 </div>
                 <div class="form-group">
                     
-                    <input name="telefono_residencia" type="number" class="form-control" placeholder="Telefono_residencia" >
+                    <input name="telefono_residencia" type="text" class="form-control" placeholder="Telefono_residencia" >
                 </div>
                 <div class="form-group">
                     
-                    <input name="telefono_oficina" type="number" class="form-control" placeholder="Telefono_oficina" >
+                    <input name="telefono_oficina" type="text" class="form-control" placeholder="Telefono_oficina" >
                 </div>
                 <div class="form-group">
                     

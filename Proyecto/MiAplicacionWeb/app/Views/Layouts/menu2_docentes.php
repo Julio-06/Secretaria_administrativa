@@ -30,11 +30,7 @@
             </div>
         </li>
         
-        <li class="nav-item ">
-            <a class="nav-link text-light" href="#">
-                Configuracion
-            </a>
-        </li>
+        
          
         </ul>
 
